@@ -8,7 +8,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private new Rigidbody2D rigidbody2D;
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpForce = 10.0f;
+    [Space()]
+    [SerializeField] private float rangePointX;
+    public Vector2 RangePoint { get => new Vector2(this.transform.position.x + rangePointX, this.transform.position.y); }
+    [SerializeField] Vector2 size = Vector2.one;
     private bool IsGrounded = false;
+    [SerializeField] private GameManager gameManager;
 
     private void Awake()
     {
@@ -25,6 +30,17 @@ public class PlayerMovement : MonoBehaviour
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             IsGrounded = false;
         }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
+            foreach (var v in bucket)
+                if (v.CompareTag("Bucket"))
+                {
+                    //????
+                    //gameManager.ScoreValue += 10;
+                }
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,5 +49,11 @@ public class PlayerMovement : MonoBehaviour
         {
             IsGrounded = true;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawCube(RangePoint, size);
     }
 }
