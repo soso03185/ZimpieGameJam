@@ -14,5 +14,10 @@ namespace KJH
         {
             SceneManager.LoadScene($"{StageName}-{StageIndex}");
         }
+
+        public void StartButton()
+        {
+            SceneManager.LoadScene("KJH_StoryScene");
+        }
     }
 }

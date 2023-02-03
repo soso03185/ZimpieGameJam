@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/KJH/KJH_Scenes/KJH_LobbyScene.unity
+    guid: 70ef2986db7ff414e947076aea6b650c
+  - enabled: 1
+    path: Assets/KJH/KJH_Scenes/KJH_StageScene.unity
+    guid: 5b4fce79312b18b46818dee56ca4cad0
+  - enabled: 1
+    path: Assets/KJH/KJH_Scenes/KJH_StoryScene.unity
+    guid: ad5a09eef2872c547938b7b0cb4f96b7
+  - enabled: 1
+    path: Assets/Scenes/Level-1.unity
+    guid: c72d678ac375a4406b01601b2cd7ecdb
   m_configObjects: {}
