@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,5 +38,11 @@ public class GameManager : MonoBehaviour
         set { scoreText.text = value.ToString(); scoreValue = value; }
     }
 
-
+    /// <summary>
+    /// 게임이 끝났을 때 스테이지 씬으로 돌아가는 버튼
+    /// </summary>
+    public void ExitBtnOnClick()
+    {
+        SceneManager.LoadScene("KJH_StageScene");
+    }
 }
