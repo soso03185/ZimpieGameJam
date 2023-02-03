@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace KJH
 {
     public class KJH_StageButton : MonoBehaviour
     {
-        public int StageIndex;       
+        public string StageName;
+        public int StageIndex;
 
         public void StageButton()
         {
-            
-
+            SceneManager.LoadScene($"{StageName}-{StageIndex}");
         }
-
     }
-
 }
