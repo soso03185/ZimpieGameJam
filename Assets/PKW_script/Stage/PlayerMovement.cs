@@ -5,15 +5,29 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    public enum DirectionState
+    {
+        LeftDirection,
+        RightDirection
+    };
+
     [SerializeField] private new Rigidbody2D rigidbody2D;
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpForce = 10.0f;
     [Space()]
     [SerializeField] private float rangePointX;
-    public Vector2 RangePoint { get => new Vector2(this.transform.position.x + rangePointX, this.transform.position.y); }
+    public Vector2 RangePoint { get
+        {
+            if (directionState == DirectionState.LeftDirection)
+                return new Vector2(this.transform.position.x - rangePointX, this.transform.position.y);
+            else
+                return new Vector2(this.transform.position.x + rangePointX, this.transform.position.y);
+        }
+    }
     [SerializeField] Vector2 size = Vector2.one;
     private bool IsGrounded = false;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private DirectionState directionState = DirectionState.LeftDirection;
 
     private void Awake()
     {
@@ -24,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
+        if (horizontalInput < 0) directionState = DirectionState.LeftDirection;
+        if (horizontalInput > 0) directionState = DirectionState.RightDirection;
         rigidbody2D.velocity = new Vector2(horizontalInput * speed, rigidbody2D.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
