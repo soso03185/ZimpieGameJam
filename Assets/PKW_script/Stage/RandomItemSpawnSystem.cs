@@ -6,7 +6,9 @@ public class RandomItemSpawnSystem : MonoBehaviour
 {
     [Range(0, 20)] public int randomPositionRange = 10;
     [SerializeField] private GameObject itemPrefab;
-    //[SerializeField] private float spawnInterval = 0.5f;
+    float MinX { get => -randomPositionRange / 2; }
+    float MaxX { get => randomPositionRange / 2; }
+
     private float k = 5.0f;
 
     private void Start()
@@ -19,7 +21,7 @@ public class RandomItemSpawnSystem : MonoBehaviour
         while (true)
         {
             var objClone = Instantiate(itemPrefab);
-            float randomPositionX = Random.Range(-randomPositionRange / 2, randomPositionRange / 2);
+            float randomPositionX = Random.Range(MinX, MaxX);
             objClone.transform.position = new Vector2(this.transform.position.x + randomPositionX, this.transform.position.y);
             yield return new WaitForSeconds(k / randomPositionRange);
         }
@@ -29,8 +31,8 @@ public class RandomItemSpawnSystem : MonoBehaviour
     {
         Gizmos.color = Color.red;
 
-        Vector3 from = new Vector3(this.transform.position.x + -randomPositionRange / 2, this.transform.position.y);
-        Vector3 to = new Vector3(this.transform.position.x + randomPositionRange / 2, this.transform.position.y);
+        Vector3 from = new Vector3(this.transform.position.x + MinX, this.transform.position.y);
+        Vector3 to = new Vector3(this.transform.position.x + MaxX, this.transform.position.y);
 
         Gizmos.DrawLine(from, to);
     }
