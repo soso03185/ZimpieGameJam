@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class CreditScroller : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float totalTime = 0.0f;
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        this.transform.position += Vector3.up * 150f * Time.deltaTime;
+        totalTime += Time.deltaTime;
+        if (totalTime >= 13.0f)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("KJH_LobbyScene");
+        }
     }
 }
