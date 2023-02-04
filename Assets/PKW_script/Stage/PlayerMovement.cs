@@ -84,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Item"))
         {
             basket.ItemCount += 1;
+            Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("Stone"))
