@@ -11,6 +11,7 @@ namespace KJH
         public int Score;
         public int nowScore;
         public TextMeshProUGUI ScoreText;
+        public KJH_HpBar HpBar;
         Coroutine coroutine;
 
         private void Start()
@@ -21,6 +22,7 @@ namespace KJH
         public void AddScore(int count)
         {
             int alpha = 0;
+            int hpTimerBonus = 0;
 
             switch (count)
             {
@@ -29,16 +31,20 @@ namespace KJH
                     break;
                 case 4:
                     alpha = 100;
+                    hpTimerBonus = 5;
                     break;
                 case 5:
                     alpha = 150;
+                    hpTimerBonus = 5;
                     break;
                 case 6:
                     alpha = 300;
+                    hpTimerBonus = 10;
                     break;
             }
 
             Score += 250 * count + alpha;
+            HpBar.AddTimer(hpTimerBonus);
             coroutine = StartCoroutine(Count(Score, nowScore));
         }
 
