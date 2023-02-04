@@ -107,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("Stone"))
         {
+            basket.ItemCount = 0;
             StartStopMoveCoroutine(stunTime);
             SoundManager.Instance.PlayVFX("hitsfx");
             animator.SetTrigger("DoHit");
