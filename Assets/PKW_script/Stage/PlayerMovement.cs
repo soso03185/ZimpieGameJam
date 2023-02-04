@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private DirectionState directionState = DirectionState.LeftDirection;
 
     [SerializeField] private Basket basket;
+    private bool isStuned = false;
+    [SerializeField] float stunTime = 1.0f;
 
     private void Awake()
     {
@@ -39,9 +41,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isStuned == true) return;
+
         float horizontalInput = Input.GetAxis("Horizontal");
         if (horizontalInput < 0) directionState = DirectionState.LeftDirection;
         if (horizontalInput > 0) directionState = DirectionState.RightDirection;
+
+
         rigidbody2D.velocity = new Vector2(horizontalInput * speed, rigidbody2D.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
@@ -69,12 +75,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private Coroutine currentCoroutine = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Item"))
         {
             basket.ItemCount += 1;
         }
+
+        if (collision.CompareTag("Stone"))
+        {
+            if (currentCoroutine == null)
+                currentCoroutine = StartCoroutine(StunCooltime());
+
+        }
+    }
+
+    IEnumerator StunCooltime()
+    {
+        Debug.Log("aaaaaa");
+        isStuned = true;
+        rigidbody2D.velocity = Vector3.zero;
+        yield return new WaitForSeconds(stunTime);
+        isStuned = false;
+        currentCoroutine = null;
     }
 
     private void OnDrawGizmos()
