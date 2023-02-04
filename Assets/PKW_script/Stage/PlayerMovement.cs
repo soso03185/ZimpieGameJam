@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private DirectionState directionState = DirectionState.LeftDirection;
 
     [SerializeField] private Basket basket;
+    [SerializeField] private KJH.KJH_Score Score;
 
     private void Awake()
     {
@@ -50,13 +51,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
-            foreach (var v in bucket)
-                if (v.CompareTag("Bucket"))
-                {
-                    //????
-                    //gameManager.ScoreValue += 10;
-                }
+            Score.AddScore(basket.ItemCount);            
+
+            //var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
+            //foreach (var v in bucket)
+            //    if (v.CompareTag("Bucket"))
+            //    {
+            //        //????
+            //        //gameManager.ScoreValue += 10;
+            //    }
 
         }
     }

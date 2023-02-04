@@ -13,15 +13,35 @@ namespace KJH
         public TextMeshProUGUI ScoreText;
         Coroutine coroutine;
 
-        public void Update()
+        private void Start()
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            ScoreText = GetComponent<TextMeshProUGUI>();
+        }
+
+        public void AddScore(int count)
+        {
+            int alpha = 0;
+
+            switch (count)
             {
-                Score += 250;
-                coroutine = StartCoroutine(Count(Score, nowScore));
+                case 3:
+                    alpha = 50;
+                    break;
+                case 4:
+                    alpha = 100;
+                    break;
+                case 5:
+                    alpha = 150;
+                    break;
+                case 6:
+                    alpha = 300;
+                    break;
             }
 
+            Score += 250 * count + alpha;
+            coroutine = StartCoroutine(Count(Score, nowScore));
         }
+
         IEnumerator Count(float target, float current)
         {
             float duration = 0.5f; // 카운팅에 걸리는 시간 설정. 
