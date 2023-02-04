@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using System;
 
 namespace KJH
 {
@@ -13,6 +14,8 @@ namespace KJH
         public TextMeshProUGUI ScoreText;
         public KJH_HpBar HpBar;
         Coroutine coroutine;
+        public Action<int> OnGetScoreEvent;
+        public TextMeshProUGUI MaxScoreText;
 
         private void Start()
         {
@@ -46,11 +49,12 @@ namespace KJH
             Score += 250 * count + alpha;
             HpBar.AddTimer(hpTimerBonus);
             coroutine = StartCoroutine(Count(Score, nowScore));
+            OnGetScoreEvent?.Invoke(Score);
         }
 
         IEnumerator Count(float target, float current)
         {
-            float duration = 0.5f; // 카운팅에 걸리는 시간 설정. 
+            float duration = 0.5f; // ???????? ?????? ???? ????. 
             float offset = (target - current) / duration; // 
 
             while (current < target)

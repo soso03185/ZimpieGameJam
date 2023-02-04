@@ -8,36 +8,6 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
-    /// <summary>
-    /// 체력의 값을 표현하는 슬라이더 UI
-    /// </summary>
-    [SerializeField] private Slider healthSlider;
-
-    /// <summary>
-    /// 점수를 화면에 표현하는 텍스트 UI
-    /// </summary>
-    [SerializeField] private TMP_Text scoreText;
-
-    /// <summary>
-    /// 대입된 데이터를 바로 UI에 반영하는 HealthProperty
-    /// </summary>
-
-    private int healthValue;
-    public int HealthValue
-    {
-        get => healthValue;
-        set { healthSlider.value = value; healthValue = value; }
-    }
-
-    /// <summary>
-    /// 대입된 데이터를 바로 UI에 반영하는 Score Property
-    /// </summary>
-    private int scoreValue;
-    public int ScoreValue
-    {
-        get => scoreValue;
-        set { scoreText.text = value.ToString(); scoreValue = value; }
-    }
 
     /// <summary>
     /// 버튼을 클릭했을때 로비 씬으로 이동하는 클릭이벤트
@@ -66,6 +36,11 @@ public class GameManager : MonoBehaviour
     };
     [SerializeField] private SpeedState speedState = SpeedState.FAST;
     [SerializeField] private GameObject itemPrefab;
+    [SerializeField] private PopupWindow popupwindow;
+    [SerializeField] private int perfectScore = 25000;
+    [SerializeField] private KJH.KJH_Score KJH_Score;
+    [SerializeField] private KJH_HpBar KJH_HpBar;
+
     private void SpawnStone()
     {
         for (int i = 0; i < stoneCount; i++)
@@ -122,6 +97,18 @@ public class GameManager : MonoBehaviour
     {
         SpawnStone();
         ChangeItemSpeed();
+        KJH_Score.MaxScoreText.text = "/" + perfectScore.ToString();
+        KJH_Score.ScoreText.text = "0";
+        KJH_Score.OnGetScoreEvent += (score) =>
+        {
+            Debug.Log(score);
+            if (score >= perfectScore)
+            {
+
+                popupwindow.Show(true, score, (int)KJH_HpBar.sumTime);
+            }            
+        };
+
         SoundManager.Instance.PlayBGM("hey");
     }
 
