@@ -1935,7 +1935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomPositionRange: 5
   itemPrefab: {fileID: 398310468270613317, guid: b8b391a70d56d48c5a09ea365cb65e5e, type: 3}
-  dustPrefab: {fileID: 0}
+  dustPrefab: {fileID: 398310468270613317, guid: 630a7770142b6469b89f3fd5cde5c037, type: 3}
 --- !u!4 &886073647
 Transform:
   m_ObjectHideFlags: 0
@@ -2886,7 +2886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaced5bf9c26482b99d533ec472da5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationEase: 28
 --- !u!114 &1673451336 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6100412716381196292, guid: 2c8e72701ffe7e2498a345fef8f8c87b, type: 3}

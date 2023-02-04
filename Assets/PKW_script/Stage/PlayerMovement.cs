@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             basket.ItemCount = 0;
             animator.SetTrigger("DoGoalin");
             StartStopMoveCoroutine(0.5f);
+
             //var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
             //foreach (var v in bucket)
             //    if (v.CompareTag("Bucket"))
