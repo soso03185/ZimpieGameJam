@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded = false;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DirectionState directionState = DirectionState.LeftDirection;
+    private Animator animator;
 
     [SerializeField] private Basket basket;
     [SerializeField] private bool isStuned = false;
@@ -37,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        animator.SetBool("IsMoving", false);
     }
 
     // Update is called once per frame
@@ -45,9 +52,10 @@ public class PlayerMovement : MonoBehaviour
         if (isStuned == true) return;
 
         float horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput < 0) directionState = DirectionState.LeftDirection;
+        if (horizontalInput < 0) directionState = DirectionState.LeftDirection; 
         if (horizontalInput > 0) directionState = DirectionState.RightDirection;
 
+        animator.SetBool("IsMoving", horizontalInput != 0.0f);
 
         rigidbody2D.velocity = new Vector2(horizontalInput * speed, rigidbody2D.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
@@ -57,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Score.AddScore(basket.ItemCount);            
-
+            Score.AddScore(basket.ItemCount);
+            animator.SetTrigger("DoGoalin");
             //var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
             //foreach (var v in bucket)
             //    if (v.CompareTag("Bucket"))
