@@ -43,7 +43,7 @@ public class KJH_HpBar : MonoBehaviour
         }
         
         if (timer >= 91) timer = 90;
-        if (timer <= 0) timer = 0;
+        if (timer <= 0) sumTime = 90;
 
         TimeCount.text = string.Format("{0:D1}:{1:D2}", _min, (int)_sec);
 
@@ -51,6 +51,16 @@ public class KJH_HpBar : MonoBehaviour
         else if (Hp_Image.fillAmount >= 0.6f) Hp_Image.DOColor(new Color32(255, 160, 59, 255), 0.3f);
         else if (Hp_Image.fillAmount >= 0.3f) Hp_Image.DOColor(new Color32(255, 232, 74, 255), 0.3f);
         else Hp_Image.DOColor(new Color32(128, 227, 255, 255), 0.3f);
+    }
+
+    public void Half()
+    {
+        Hp_Image.fillAmount /= 2;
+        //timer /= 2;
+        //ssumTime *= 2;
+
+        timer /= 2;
+        sumTime = 90 - timer;
     }
 
     public void AddTimer(int addTime)

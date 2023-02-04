@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5719865358650774331}
   m_Layer: 0
   m_Name: Dust
-  m_TagString: Item
+  m_TagString: Dust
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.22, y: 2.04}
+    oldSize: {x: 0.79, y: 0.81}
     newSize: {x: 19.2, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: -1521975489
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c4e121bcddbf2480b915f52d17adf7e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b4106d16a1084637869cab3cd5fcaeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

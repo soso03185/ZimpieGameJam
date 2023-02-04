@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isStuned = false;
     [SerializeField] float stunTime = 1.0f;
     [SerializeField] private KJH.KJH_Score Score;
-    [SerializeField] private Slider slider;
+    [SerializeField] private KJH_HpBar hpBar;
 
     private void Awake()
     {
@@ -101,13 +101,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("Dust"))
         {
-            var currentValue = slider.value;
-            slider.value = currentValue / 2;
+            hpBar.Half();
+            Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("Stone"))
         {
-            Debug.Log("aaaaaaa");
             StartStopMoveCoroutine(stunTime);
             SoundManager.Instance.PlayVFX("hitsfx");
         }
