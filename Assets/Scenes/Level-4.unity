@@ -3512,7 +3512,7 @@ MonoBehaviour:
   size: {x: 1, y: 1}
   gameManager: {fileID: 0}
   directionState: 0
-  basket: {fileID: 1983284023}
+  basket: {fileID: 0}
   isStuned: 0
   stunTime: 1
   Score: {fileID: 573539743}
@@ -4046,8 +4046,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1983284021}
   - component: {fileID: 1983284024}
-  - component: {fileID: 1983284023}
   - component: {fileID: 1983284022}
+  - component: {fileID: 1983284023}
   m_Layer: 0
   m_Name: Basket
   m_TagString: Basket
@@ -4134,7 +4134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemCount: 0
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: fab0df009f9eb45e6a58c0d93e293e62, type: 3}
+  - {fileID: 21300000, guid: aa4e2c12727344dbcbc4d728a1600637, type: 3}
+  - {fileID: 21300000, guid: ff154b3dfebe049999b5d3e5ca112e1f, type: 3}
+  - {fileID: 21300000, guid: e72e3a1caf8d649698c1be4b1d783c24, type: 3}
+  - {fileID: 21300000, guid: b2cc28e08c66c4f1bb99ef8c1346529d, type: 3}
 --- !u!61 &1983284024
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -481,7 +481,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemCount: 0
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: fab0df009f9eb45e6a58c0d93e293e62, type: 3}
+  - {fileID: 21300000, guid: aa4e2c12727344dbcbc4d728a1600637, type: 3}
+  - {fileID: 21300000, guid: ff154b3dfebe049999b5d3e5ca112e1f, type: 3}
+  - {fileID: 21300000, guid: e72e3a1caf8d649698c1be4b1d783c24, type: 3}
+  - {fileID: 21300000, guid: b2cc28e08c66c4f1bb99ef8c1346529d, type: 3}
 --- !u!1 &150819893
 GameObject:
   m_ObjectHideFlags: 0

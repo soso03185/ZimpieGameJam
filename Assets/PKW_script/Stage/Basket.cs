@@ -16,15 +16,19 @@ public class Basket : MonoBehaviour
         set
         {
             itemCount = value;
-            //ChangeSprite();
+            ChangeSprite();
         }
     }
 
     private void ChangeSprite()
     {
-        if (itemCount >= 4) SpriteRenderer.sprite =  sprites[2];
-        if (itemCount >= 2) SpriteRenderer.sprite = sprites[0];
-        if (itemCount >= 1) SpriteRenderer.sprite = sprites[1];
+        if (itemCount >= 4) SpriteRenderer.sprite =  sprites[4];
+        else if (itemCount >= 3) SpriteRenderer.sprite = sprites[3];
+        else if (itemCount >= 2) SpriteRenderer.sprite = sprites[2];
+        else if (itemCount >= 1) SpriteRenderer.sprite = sprites[1];
+
+        else SpriteRenderer.sprite = sprites[0];
+
 
     }
 
