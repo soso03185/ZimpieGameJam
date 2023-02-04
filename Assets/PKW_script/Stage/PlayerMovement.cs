@@ -69,18 +69,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Score.AddScore(basket.ItemCount);
-            basket.ItemCount = 0;
-            animator.SetTrigger("DoGoalin");
-            StartStopMoveCoroutine(0.5f);
-
-            //var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
-            //foreach (var v in bucket)
-            //    if (v.CompareTag("Bucket"))
-            //    {
-            //        //????
-            //        //gameManager.ScoreValue += 10;
-            //    }
+            var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
+            foreach (var v in bucket)
+                if (v.CompareTag("Bucket"))
+                {
+                    Score.AddScore(basket.ItemCount);
+                    basket.ItemCount = 0;
+                    animator.SetTrigger("DoGoalin");
+                    StartStopMoveCoroutine(0.5f);
+                }
 
         }
     }
@@ -110,8 +107,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("Stone"))
         {
+            Debug.Log("aaaaaaa");
             StartStopMoveCoroutine(stunTime);
-            SoundManager.Instance.PlayVFX("hitsfx");
+            //SoundManager.Instance.PlayVFX("hitsfx");
         }
     }
 
@@ -123,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator StunCooltime(float stopTime)
     {
-        Debug.Log("aaaaaa");
         isStuned = true;
         rigidbody2D.velocity = Vector3.zero;
         yield return new WaitForSeconds(stopTime);
