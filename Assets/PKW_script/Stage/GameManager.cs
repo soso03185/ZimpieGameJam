@@ -8,6 +8,9 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject UI_Particle;
+    public int StageIndex;
+    public bool isClear = false;
 
     /// <summary>
     /// 버튼을 클릭했을때 로비 씬으로 이동하는 클릭이벤트
@@ -104,7 +107,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(score);
             if (score >= perfectScore)
             {
-
+                UI_Particle.SetActive(true);
                 popupwindow.Show(true, score, (int)KJH_HpBar.sumTime);
             }            
         };
