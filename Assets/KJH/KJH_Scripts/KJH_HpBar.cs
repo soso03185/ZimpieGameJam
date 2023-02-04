@@ -24,25 +24,28 @@ public class KJH_HpBar : MonoBehaviour
             isGreen = false;
             isYellow = true;
             isRed = false;
+            Hp_Bar.DOColor(new Color(255, 192, 0), 1);
         }
         else if (Hp_Bar.fillAmount < 0.2f)
         {
             isGreen = false;
             isYellow = false;
             isRed = true;
+            Hp_Bar.DOColor(new Color(255, 0, 0), 1);
         }
         else
         {
             isGreen = true;
             isYellow = false;
             isRed = false;
+            Hp_Bar.DOColor(new Color(176, 80, 0), 1);
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
             Hp_Bar.DOColor(new Color(255, 0, 0), 1);    // red
-         //   Hp_Bar.DOColor(new Color(255, 192, 0), 1);  // yellow
-         //   Hp_Bar.DOColor(new Color(176, 80, 0), 1);   // green
+            Hp_Bar.DOColor(new Color(255, 192, 0), 1);  // yellow
+            Hp_Bar.DOColor(new Color(176, 80, 0), 1);   // green
         }
     }
 
