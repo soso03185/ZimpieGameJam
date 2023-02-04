@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isStuned = false;
     [SerializeField] float stunTime = 1.0f;
     [SerializeField] private KJH.KJH_Score Score;
+    [SerializeField] private Slider slider;
 
     private void Awake()
     {
@@ -95,6 +97,12 @@ public class PlayerMovement : MonoBehaviour
         {
             basket.ItemCount += 1;
             Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Dust"))
+        {
+            var currentValue = slider.value;
+            slider.value = currentValue / 2;
         }
 
         if (collision.CompareTag("Stone"))
