@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
   scoreText: {fileID: 0}
-  stoneCount: 3
+  stoneCount: 2
   stonePrefab: {fileID: 2127339939787789468, guid: 9da79a65fb65341e49db15b7d55809dc, type: 3}
   speedState: 0
   itemPrefab: {fileID: 398310468270613317, guid: b8b391a70d56d48c5a09ea365cb65e5e, type: 3}
@@ -2356,6 +2356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1336467734}
   - component: {fileID: 1336467735}
+  - component: {fileID: 1336467736}
   m_Layer: 0
   m_Name: cha_doctor_shadow
   m_TagString: Untagged
@@ -2371,11 +2372,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336467733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: 0}
+  m_LocalPosition: {x: 0, y: -3.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1961533689}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1336467735
 SpriteRenderer:
@@ -2429,6 +2430,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1336467736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336467733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6775b0f684344b89d5c6afd932ed66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1449928222}
 --- !u!1 &1354314732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3235,7 +3249,6 @@ Transform:
   - {fileID: 1879482151}
   - {fileID: 1240537372}
   - {fileID: 1240626249}
-  - {fileID: 1336467734}
   m_Father: {fileID: 1449928222}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
