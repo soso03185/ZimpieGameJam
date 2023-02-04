@@ -2018,7 +2018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7902347159680629698, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7902347159680629701, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
       propertyPath: m_Pivot.x
@@ -2116,6 +2116,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7902347159680629702, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 870671440}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
 --- !u!224 &1614646389 stripped

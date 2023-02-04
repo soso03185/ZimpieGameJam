@@ -8,10 +8,11 @@ public class PausePanel : MonoBehaviour
     public Button continueBtn;
     public Button restartBtn;
     public Button exitBtn;
+    [SerializeField] private GameManager GameManager;
 
     public void Continue()
     {
-        //GameManager.Instance.AnimatingPausePanel(true);
+        GameManager.AnimatingPausePanel(true);
     }
 
     public void Restart()
