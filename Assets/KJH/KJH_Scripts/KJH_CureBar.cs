@@ -21,7 +21,6 @@ public class KJH_CureBar : MonoBehaviour
         myImage.fillAmount = CureBarGauge;
         Debug.Log("Score : " + Score.Score);
         Debug.Log("perfectScore : " + GM.perfectScore);
-
     }
 
 }
