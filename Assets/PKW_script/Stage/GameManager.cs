@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SpeedState speedState = SpeedState.FAST;
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private PopupWindow popupwindow;
-    [SerializeField] private int perfectScore = 25000;
+    [SerializeField] public int perfectScore = 25000;
     [SerializeField] private KJH.KJH_Score KJH_Score;
     [SerializeField] private KJH_HpBar KJH_HpBar;
 
