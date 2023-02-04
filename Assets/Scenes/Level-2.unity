@@ -566,6 +566,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5823961076465078343, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442037877}
+    - target: {fileID: 5823961076465078343, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryBtnOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823961078254246898, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442037877}
+    - target: {fileID: 5823961078254246898, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitBtnOnClick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
 --- !u!224 &338440948 stripped
