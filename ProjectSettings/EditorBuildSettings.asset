@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/KJH/KJH_Scenes/KJH_StoryScene.unity
     guid: ad5a09eef2872c547938b7b0cb4f96b7
   - enabled: 1
+    path: Assets/Scenes/Credit Scene.unity
+    guid: 73d1b5a47fcf641c3b63a6502c21eb80
+  - enabled: 1
     path: Assets/Scenes/Level-1.unity
     guid: c72d678ac375a4406b01601b2cd7ecdb
   m_configObjects: {}

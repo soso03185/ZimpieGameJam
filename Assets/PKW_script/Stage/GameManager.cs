@@ -39,10 +39,19 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 게임이 끝났을 때 스테이지 씬으로 돌아가는 버튼
+    /// 버튼을 클릭했을때 로비 씬으로 이동하는 클릭이벤트
     /// </summary>
     public void ExitBtnOnClick()
     {
-        SceneManager.LoadScene("KJH_StageScene");
+        //Scene load lobby Scene
+        Debug.Log("Scene load lobby Scene");
     }
+
+    public void RetryBtnOnClick()
+    {
+        //Scene reload currentScene
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        Debug.Log("Scene reload currentScene");
+    }
+    
 }
