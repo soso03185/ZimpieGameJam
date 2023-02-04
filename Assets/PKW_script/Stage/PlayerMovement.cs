@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         animator.SetBool("IsMoving", false);
+        SoundManager.Instance.SetSFXVolume(2.0f);
     }
 
     // Update is called once per frame
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             IsGrounded = false;
+            SoundManager.Instance.PlayVFX("jumpsfx");
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
