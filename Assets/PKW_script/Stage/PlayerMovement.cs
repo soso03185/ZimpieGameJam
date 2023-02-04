@@ -109,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
         {
             StartStopMoveCoroutine(stunTime);
             SoundManager.Instance.PlayVFX("hitsfx");
+            animator.SetTrigger("DoHit");
         }
     }
 

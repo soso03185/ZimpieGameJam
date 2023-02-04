@@ -2161,6 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI_Particle: {fileID: 1524492366}
   StageIndex: 1
+  isClear: 0
   stoneCount: 0
   stonePrefab: {fileID: 2127339939787789468, guid: 9da79a65fb65341e49db15b7d55809dc, type: 3}
   speedState: 0
@@ -3098,7 +3099,7 @@ MonoBehaviour:
   isStuned: 0
   stunTime: 1
   Score: {fileID: 1673451336}
-  slider: {fileID: 0}
+  hpBar: {fileID: 1314941730}
 --- !u!111 &1449928220
 Animation:
   m_ObjectHideFlags: 0
