@@ -8,9 +8,6 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject UI_Particle;
-    public int StageIndex;
-    public bool isClear = false;
 
     /// <summary>
     /// 버튼을 클릭했을때 로비 씬으로 이동하는 클릭이벤트
@@ -107,12 +104,15 @@ public class GameManager : MonoBehaviour
             Debug.Log(score);
             if (score >= perfectScore)
             {
-                UI_Particle.SetActive(true);
-                isClear = true;
+
                 popupwindow.Show(true, score, (int)KJH_HpBar.sumTime);
-            }
+            }            
         };
 
+        KJH_HpBar.OnTimeOver += () =>
+        {
+            popupwindow.Show(false, KJH_Score.Score, 0);
+        };
         SoundManager.Instance.PlayBGM("hey");
     }
 
@@ -123,31 +123,6 @@ public class GameManager : MonoBehaviour
             AnimatingPausePanel(isOpened);
             isOpened = !isOpened;
         }
-
-        if (isClear == true)
-        {
-            GameObject go = GameObject.Find("DataManager");
-            DataManager DM = go.GetComponent<DataManager>();
-
-            switch (StageIndex)
-            {
-                case 1:
-                    DM.ClearStage_1 = true;
-                    break;
-                case 2:
-                    DM.ClearStage_2 = true;
-                    break;
-                case 3:
-                    DM.ClearStage_3 = true;
-                    break;
-                case 4:
-                    DM.ClearStage_4 = true;
-                    break;
-                case 5:
-                    DM.ClearStage_5 = true;
-                    break;
-            }
-
-        }
     }
+
 }
