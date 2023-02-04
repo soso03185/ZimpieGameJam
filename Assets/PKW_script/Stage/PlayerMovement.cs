@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("aaaaaaa");
             StartStopMoveCoroutine(stunTime);
-            //SoundManager.Instance.PlayVFX("hitsfx");
+            SoundManager.Instance.PlayVFX("hitsfx");
         }
     }
 

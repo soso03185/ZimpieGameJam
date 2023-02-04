@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ExitBtnOnClick()
     {
-        //Scene load lobby Scene
+        SceneManager.LoadScene("KJH_StageScene");
         Debug.Log("Scene load lobby Scene");
     }
 
