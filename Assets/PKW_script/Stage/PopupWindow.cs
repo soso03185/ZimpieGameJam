@@ -34,6 +34,6 @@ public class PopupWindow : MonoBehaviour
 
         totalScoreText.text = "Score : " + totalScore.ToString();
         totalTimeText.text = "Time : " + totalTime.ToString();
-        transform.DOScale(1.0f, 1.0f).SetEase(animationEase);
+        transform.DOScale(1.7f, 1.0f).SetEase(animationEase);
     }
 }

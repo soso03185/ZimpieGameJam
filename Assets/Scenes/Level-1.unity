@@ -1358,10 +1358,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 20ca1d07fb30cd04dbc2b68275aa1608, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2270,6 +2270,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5823961076353301174, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
+      propertyPath: animationEase
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823961077778410585, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e01a04ae3df84a144946b800ac9ba89d, type: 2}
+    - target: {fileID: 5823961077778410585, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8828193318180898516, guid: e01a04ae3df84a144946b800ac9ba89d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e5094b747bbc47228807f22b8037f34, type: 3}
 --- !u!224 &1550121719 stripped
