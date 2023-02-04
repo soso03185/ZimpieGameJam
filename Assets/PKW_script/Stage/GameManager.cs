@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
     {
         SpawnStone();
         ChangeItemSpeed();
+        SoundManager.Instance.PlayBGM("hey");
     }
 
     private void Update()

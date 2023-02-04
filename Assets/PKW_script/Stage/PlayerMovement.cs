@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Stone"))
         {
             StartStopMoveCoroutine(stunTime);
-
+            SoundManager.Instance.PlayVFX("hitsound");
         }
     }
 
