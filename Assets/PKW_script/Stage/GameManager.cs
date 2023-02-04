@@ -98,22 +98,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PausePanel pausePanel;
     public void AnimatingPausePanel(bool onoff)
     {
-        //if (onoff)
-        //{
-        //    tweenner.Kill();
-        //    pausePanel.transform.DOScale(new Vector3(0, 0, 0), 0.25f).SetEase(Ease.InOutExpo);//.OnComplete(() => pausePanel.gameObject.SetActive(false));
+        if (onoff)
+        {
+            tweenner.Kill();
+            pausePanel.transform.DOScale(new Vector3(0, 0, 0), 0.25f).SetEase(Ease.InOutExpo);//.OnComplete(() => pausePanel.gameObject.SetActive(false));
 
-        //    Time.timeScale = 1.0f;
+            Time.timeScale = 1.0f;
 
-        //}
-        //else
-        //{
+        }
+        else
+        {
 
-        //    tweenner.Kill();
-        //    pausePanel.transform.DOScale(new Vector3(1, 1, 1), 0.5f).SetEase(Ease.InExpo).SetEase(Ease.OutBounce).SetUpdate(true);
+            tweenner.Kill();
+            pausePanel.transform.DOScale(new Vector3(1, 1, 1), 0.5f).SetEase(Ease.InExpo).SetEase(Ease.OutBounce).SetUpdate(true);
 
-        //    Time.timeScale = 0.0f;
-        //}
+            Time.timeScale = 0.0f;
+        }
+
+
     }
 
     private void Start()

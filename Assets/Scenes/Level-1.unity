@@ -1494,7 +1494,7 @@ MonoBehaviour:
   stonePrefab: {fileID: 2127339939787789468, guid: 9da79a65fb65341e49db15b7d55809dc, type: 3}
   speedState: 0
   itemPrefab: {fileID: 398310468270613317, guid: b8b391a70d56d48c5a09ea365cb65e5e, type: 3}
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 1464250020}
 --- !u!4 &870671441
 Transform:
   m_ObjectHideFlags: 0
@@ -1994,6 +1994,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1464250020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7902347159680629702, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
+  m_PrefabInstance: {fileID: 1614646388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37524efc2253b754999e9f3b6322b433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1614646388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2004,6 +2015,10 @@ PrefabInstance:
     - target: {fileID: 7902347159680629698, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
       propertyPath: m_Name
       value: Pause Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902347159680629698, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7902347159680629701, guid: 30fb4cabf6a2741a58d20cb5c7f480e6, type: 3}
       propertyPath: m_Pivot.x
