@@ -8,6 +8,7 @@ TagManager:
   - Bucket
   - Stone
   - Item
+  - Basket
   layers:
   - Default
   - TransparentFX
