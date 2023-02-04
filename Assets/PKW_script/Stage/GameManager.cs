@@ -108,8 +108,9 @@ public class GameManager : MonoBehaviour
             if (score >= perfectScore)
             {
                 UI_Particle.SetActive(true);
+                isClear = true;
                 popupwindow.Show(true, score, (int)KJH_HpBar.sumTime);
-            }            
+            }
         };
 
         SoundManager.Instance.PlayBGM("hey");
@@ -122,6 +123,31 @@ public class GameManager : MonoBehaviour
             AnimatingPausePanel(isOpened);
             isOpened = !isOpened;
         }
-    }
 
+        if (isClear == true)
+        {
+            GameObject go = GameObject.Find("DataManager");
+            DataManager DM = go.GetComponent<DataManager>();
+
+            switch (StageIndex)
+            {
+                case 1:
+                    DM.ClearStage_1 = true;
+                    break;
+                case 2:
+                    DM.ClearStage_2 = true;
+                    break;
+                case 3:
+                    DM.ClearStage_3 = true;
+                    break;
+                case 4:
+                    DM.ClearStage_4 = true;
+                    break;
+                case 5:
+                    DM.ClearStage_5 = true;
+                    break;
+            }
+
+        }
+    }
 }
