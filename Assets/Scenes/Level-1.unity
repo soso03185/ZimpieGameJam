@@ -1823,6 +1823,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &846598647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846598648}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &846598648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846598647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4438029, y: -1.3403271, z: -0.59340394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870671439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,6 +1935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomPositionRange: 5
   itemPrefab: {fileID: 398310468270613317, guid: b8b391a70d56d48c5a09ea365cb65e5e, type: 3}
+  dustPrefab: {fileID: 0}
 --- !u!4 &886073647
 Transform:
   m_ObjectHideFlags: 0
@@ -2575,6 +2606,7 @@ MonoBehaviour:
   isStuned: 0
   stunTime: 1
   Score: {fileID: 1673451336}
+  slider: {fileID: 0}
 --- !u!111 &1449928220
 Animation:
   m_ObjectHideFlags: 0

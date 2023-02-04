@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class PopupWindowAnimation : MonoBehaviour
+public class PopupWindow : MonoBehaviour
 {
     [SerializeField] private Ease animationEase = Ease.Flash;
 

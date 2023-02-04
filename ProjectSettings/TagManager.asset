@@ -9,6 +9,7 @@ TagManager:
   - Stone
   - Item
   - Basket
+  - Dust
   layers:
   - Default
   - TransparentFX
