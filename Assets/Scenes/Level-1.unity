@@ -1473,7 +1473,7 @@ GameObject:
   - component: {fileID: 835006707}
   m_Layer: 0
   m_Name: Stone
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1488,7 +1488,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1875,6 +1875,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   directionState: 0
   basket: {fileID: 150776341}
+  stunTime: 1
 --- !u!23 &1449928220
 MeshRenderer:
   m_ObjectHideFlags: 0
