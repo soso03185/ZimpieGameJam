@@ -28,7 +28,7 @@ public class RandomItemSpawnSystem : MonoBehaviour
             else objClone = Instantiate(itemPrefab);
             float randomPositionX = Random.Range(MinX, MaxX);
             objClone.transform.position = new Vector2(this.transform.position.x + randomPositionX, this.transform.position.y);
-            yield return new WaitForSeconds(k / randomPositionRange);
+            yield return new WaitForSeconds(k / randomPositionRange + Random.Range(-0.5f, 0.5f));
         }
     }
 
