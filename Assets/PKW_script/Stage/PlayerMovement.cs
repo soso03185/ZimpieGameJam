@@ -66,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Score.AddScore(basket.ItemCount);
+            basket.ItemCount = 0;
             animator.SetTrigger("DoGoalin");
+            StartStopMoveCoroutine(0.5f);
             //var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
             //foreach (var v in bucket)
             //    if (v.CompareTag("Bucket"))
@@ -97,18 +99,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("Stone"))
         {
-            if (currentCoroutine == null)
-                currentCoroutine = StartCoroutine(StunCooltime());
+            StartStopMoveCoroutine(stunTime);
 
         }
     }
 
-    IEnumerator StunCooltime()
+    private void StartStopMoveCoroutine(float stopTime)
+    {
+        if (currentCoroutine == null)
+            currentCoroutine = StartCoroutine(StunCooltime(stopTime));
+    }
+
+    IEnumerator StunCooltime(float stopTime)
     {
         Debug.Log("aaaaaa");
         isStuned = true;
         rigidbody2D.velocity = Vector3.zero;
-        yield return new WaitForSeconds(stunTime);
+        yield return new WaitForSeconds(stopTime);
         isStuned = false;
         currentCoroutine = null;
     }
