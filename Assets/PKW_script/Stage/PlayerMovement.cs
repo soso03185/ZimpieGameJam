@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private DirectionState directionState = DirectionState.LeftDirection;
 
     [SerializeField] private Basket basket;
-    private bool isStuned = false;
+    [SerializeField] private bool isStuned = false;
     [SerializeField] float stunTime = 1.0f;
     [SerializeField] private KJH.KJH_Score Score;
 

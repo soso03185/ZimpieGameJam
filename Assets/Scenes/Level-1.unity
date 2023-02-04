@@ -977,7 +977,7 @@ GameObject:
   - component: {fileID: 332581730}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1369,7 +1369,7 @@ GameObject:
   - component: {fileID: 442355152}
   m_Layer: 0
   m_Name: Bottom
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2538,12 +2538,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   speed: 7
-  jumpForce: 5
+  jumpForce: 6
   rangePointX: 1.3
   size: {x: 1, y: 1}
   gameManager: {fileID: 0}
   directionState: 0
   basket: {fileID: 150776341}
+  isStuned: 0
   stunTime: 1
   Score: {fileID: 1314941730}
 --- !u!4 &1449928222
@@ -2903,7 +2904,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
