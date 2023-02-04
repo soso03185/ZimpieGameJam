@@ -12,9 +12,9 @@ public class KJH_HpBar : MonoBehaviour
 
     public float _sec;
     public int _min;
+    public float sumTime;
 
     float damageTime;
-    float sumTime;
 
     public float timer;
 
@@ -55,10 +55,7 @@ public class KJH_HpBar : MonoBehaviour
 
     public void AddTimer(int addTime)
     {
-        Debug.Log("ADdTimer :  " + addTime);
-        Debug.Log("ADdTimer :  " + Hp_Image.fillAmount);
-        Hp_Image.fillAmount += (Time.deltaTime / 90) * addTime;
-        Debug.Log("ADdTimer :  " + Hp_Image.fillAmount);
         sumTime -= addTime;
+        Hp_Image.fillAmount = (timer + addTime) / 90;
     }
 }
