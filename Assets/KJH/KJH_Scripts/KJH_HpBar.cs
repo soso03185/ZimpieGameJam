@@ -6,47 +6,29 @@ using DG.Tweening;
 
 public class KJH_HpBar : MonoBehaviour
 {
-    public Image Hp_Bar;
+    Image Hp_Bar;
     float damageTime;
 
-    bool isGreen;
-    bool isYellow;
-    bool isRed;
-
+    private void Awake()
+    {
+        Hp_Bar = GetComponent<Image>();
+    }
     public void Update()
     {
         damageTime = Time.deltaTime / 15;
         Hp_Bar.fillAmount -= damageTime;
 
-        // 0 ~ 20 /  20 ~ 80 / 80 ~ 100
-        if(Hp_Bar.fillAmount < 0.8f)
+        if (Hp_Bar.fillAmount >= 0.8f)
         {
-            isGreen = false;
-            isYellow = true;
-            isRed = false;
-            Hp_Bar.DOColor(new Color(255, 192, 0), 1);
+            Hp_Bar.DOColor(Color.green, 0.6f); // green
         }
-        else if (Hp_Bar.fillAmount < 0.2f)
+        else if (Hp_Bar.fillAmount >= 0.25f)
         {
-            isGreen = false;
-            isYellow = false;
-            isRed = true;
-            Hp_Bar.DOColor(new Color(255, 0, 0), 1);
+            Hp_Bar.DOColor(new Color(255, 192, 0), 0.3f); // yellow
         }
         else
         {
-            isGreen = true;
-            isYellow = false;
-            isRed = false;
-            Hp_Bar.DOColor(new Color(176, 80, 0), 1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Hp_Bar.DOColor(new Color(255, 0, 0), 1);    // red
-            Hp_Bar.DOColor(new Color(255, 192, 0), 1);  // yellow
-            Hp_Bar.DOColor(new Color(176, 80, 0), 1);   // green
+            Hp_Bar.DOColor(new Color(255, 0, 0), 0.3f); // red
         }
     }
-
 }
