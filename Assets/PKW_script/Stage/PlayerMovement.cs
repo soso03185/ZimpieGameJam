@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isStuned = false;
     [SerializeField] float stunTime = 1.0f;
     [SerializeField] private KJH.KJH_Score Score;
+    [SerializeField] private Slider slider;
 
     private void Awake()
     {
@@ -66,7 +68,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Score.AddScore(basket.ItemCount);
+            basket.ItemCount = 0;
             animator.SetTrigger("DoGoalin");
+            StartStopMoveCoroutine(0.5f);
             //var bucket = Physics2D.OverlapBoxAll(RangePoint, size, 0);
             //foreach (var v in bucket)
             //    if (v.CompareTag("Bucket"))
@@ -95,20 +99,31 @@ public class PlayerMovement : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.CompareTag("Dust"))
+        {
+            var currentValue = slider.value;
+            slider.value = currentValue / 2;
+        }
+
         if (collision.CompareTag("Stone"))
         {
-            if (currentCoroutine == null)
-                currentCoroutine = StartCoroutine(StunCooltime());
+            StartStopMoveCoroutine(stunTime);
 
         }
     }
 
-    IEnumerator StunCooltime()
+    private void StartStopMoveCoroutine(float stopTime)
+    {
+        if (currentCoroutine == null)
+            currentCoroutine = StartCoroutine(StunCooltime(stopTime));
+    }
+
+    IEnumerator StunCooltime(float stopTime)
     {
         Debug.Log("aaaaaa");
         isStuned = true;
         rigidbody2D.velocity = Vector3.zero;
-        yield return new WaitForSeconds(stunTime);
+        yield return new WaitForSeconds(stopTime);
         isStuned = false;
         currentCoroutine = null;
     }

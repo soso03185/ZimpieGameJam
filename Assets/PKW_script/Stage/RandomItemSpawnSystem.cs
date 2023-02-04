@@ -6,6 +6,7 @@ public class RandomItemSpawnSystem : MonoBehaviour
 {
     [Range(0, 20)] public int randomPositionRange = 10;
     [SerializeField] private GameObject itemPrefab;
+    [SerializeField] private GameObject dustPrefab;
     float MinX { get => -randomPositionRange / 2; }
     float MaxX { get => randomPositionRange / 2; }
 
@@ -20,7 +21,11 @@ public class RandomItemSpawnSystem : MonoBehaviour
     {
         while (true)
         {
-            var objClone = Instantiate(itemPrefab);
+            GameObject objClone;
+
+            var randomValue = Random.Range(0, 100);
+            if (randomValue < 15) objClone = Instantiate(dustPrefab);
+            else objClone = Instantiate(itemPrefab);
             float randomPositionX = Random.Range(MinX, MaxX);
             objClone.transform.position = new Vector2(this.transform.position.x + randomPositionX, this.transform.position.y);
             yield return new WaitForSeconds(k / randomPositionRange);
