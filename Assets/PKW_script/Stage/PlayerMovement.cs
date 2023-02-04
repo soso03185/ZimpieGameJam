@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DirectionState directionState = DirectionState.LeftDirection;
 
+    [SerializeField] private Basket basket;
+
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -64,6 +66,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.transform.CompareTag("Ground"))
         {
             IsGrounded = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item"))
+        {
+            basket.ItemCount += 1;
         }
     }
 

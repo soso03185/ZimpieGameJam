@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Bucket
+  - Stone
+  - Item
   layers:
   - Default
   - TransparentFX
